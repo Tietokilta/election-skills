@@ -1,0 +1,36 @@
+Puheenjohtaja,Chair
+Varapuheenjohtaja,Vice Chair
+Rahastonhoitaja,Treasurer
+Yrityssuhdevastaava,Head of Corporate Relations
+Fuksikapteeni,Fuksi Captains
+Opintovastaava,Head of Academic Affairs
+Viestintävastaava,Head of Communications
+Ulkosuhdevastaava,Head of External Relations
+Abimarkkinointivastaava,Head of Student Marketing
+Alumniyhdyshenkilö,Head of Alumni Relations
+Arkistovastaava,Archive Manager
+Digivastaava,Head of Digital Services
+Suurkurkku,Master of Songmasters
+Kiltahuonevastaava,Guild Room Coordinator
+Kiltatuotevastaava,Head of Guild Merch
+Kulttuurivastaava,Head of Culture
+Liikuntavastaava,Head of Sports
+Suurmartta,Great Grandma
+Muistinnollauskisällit,Annual Ball Apprentices
+N-vastaavat,N Captains
+Pakuvastaava,Van Coordinator
+Game Master,Game Master
+Alkorytmin päätoimittaja,Editor-in-Chief of Alkorytmi
+Isäntä ja Emäntä,Host and Hostess
+Yhdenvertaisuusvastaava,Equity Coordinator
+Kansainvälisyys- ja maisterikapteenit,International and Master's Captains
+ISOvastaava,ISO Coordinator
+Jorma Uotinen,Jorma Uotinen
+International Advocate,International Advocate
+Oltermanni,Oltermanni
+Toiminnantarkastajat,Operations Inspectors
+Varatoiminnantarkastajat,Deputy Operations Inspectors
+Muistinnollaustirehtööri,Annual Ball Director
+Seisovat fuksikapteenit,Standing Fuksi Captains
+Kansain syysmestarit,Kansain syysmestarit
+ISOpomo,ISO Boss
