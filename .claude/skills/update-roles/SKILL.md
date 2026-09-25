@@ -7,13 +7,25 @@ description: Update the pinned roles topic in the election Discourse category wi
 
 Uses the `discourse` MCP tools. Ignore `roles.fi.txt` and `roles.en.txt`; `roles.txt` (`Finnish,English` per line) is the source of roles.
 
+The MCP tools expose no category metadata or reliable pinned status (`discourse_filter_topics` reports `pinned: false` and omits the category's About topic; Data Explorer queries return 404). For those, `curl -sL` the forum's public JSON endpoints (`<origin>` = forum origin):
+
+- `<origin>/categories.json?include_subcategories=true` – category tree (`id`, `name`, `slug`, `parent_category_id`, `subcategory_list`).
+- `<origin>/c/<id>/show.json` – one category (`name`, `parent_category_id`, `read_restricted`).
+- `<origin>/c/<slug>/<id>.json` – category topic list with correct `pinned`/`visible`.
+- `<origin>/t/<id>.json` – topic `category_id`, `pinned`, `visible`, `deleted_at`.
+
 ## 1. Resolve URLs
 
 Needed: the election **category URL** (e.g. `https://forum.example.fi/c/vaalit/12`) and the **pinned topic URL**.
 
 - Use URLs given as skill arguments / in the user's request.
 - Otherwise read `CONFIG.md` in the project root.
-- If neither provides both, stop and ask the user.
+- Otherwise discover them on the forum:
+  - Get the forum origin from a topic URL returned by `discourse_search`, or ask the user.
+  - In `categories.json`, find a category named like "Virkojen esittely / Introducing the positions" whose own name or a parent category's name contains the current year.
+  - Find its pinned topic in `/c/<slug>/<id>.json` (usually the category's About topic).
+  - **Always** stop and ask the user to confirm the found category and topic (show names, parent category and URLs) before proceeding, even if the match looks certain.
+- If none of these yield both URLs, stop and ask the user.
 
 ## 2. Record URLs
 
@@ -25,15 +37,15 @@ Parse the topic ID from the URL and read it with `discourse_read_topic` (`post_l
 
 ## 4. Fetch category topics
 
-Use `discourse_filter_topics` with a filter like `category:<slug> status:listed` (`per_page: 50`), paginating until done. Keep only topics that are not deleted, unlisted/invisible, or otherwise hidden.
+Use `discourse_filter_topics` with filter `category:<slug>` (`per_page: 50`), paginating until done. Keep only topics with `visible: true` (the filter already excludes deleted topics).
 
 ## 5. Sanity checks
 
 Stop and report to the user if any fails:
 
-- The MCP server's site matches the host in the URLs.
-- The category exists and is not deleted/hidden.
-- The pinned topic exists, is not deleted/hidden, is pinned, and belongs to the category.
+- The MCP server's site matches the host in the URLs (topics from steps 3–4 have the same IDs/slugs as in the public JSON).
+- The category exists (`/c/<id>/show.json`) and is not hidden.
+- The pinned topic (`/t/<id>.json`) has `deleted_at: null`, `visible: true`, `pinned: true`, and `category_id` equal to the category ID.
 
 ## 6. Match roles to topics
 
