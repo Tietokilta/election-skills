@@ -19,7 +19,7 @@ The MCP tools expose no category metadata or reliable pinned status (`discourse_
 Needed: the election **category URL** (e.g. `https://forum.example.fi/c/vaalit/12`) and the **pinned topic URL**.
 
 - Use URLs given as skill arguments / in the user's request.
-- Otherwise read `CONFIG.md` in the project root.
+- Otherwise read `ROLE-CONFIG.md` in the project root.
 - Otherwise discover them on the forum:
   - Get the forum origin from a topic URL returned by `discourse_search`, or ask the user.
   - In `categories.json`, find a category named like "Virkojen esittely / Introducing the positions" whose own name or a parent category's name contains the current year.
@@ -29,7 +29,7 @@ Needed: the election **category URL** (e.g. `https://forum.example.fi/c/vaalit/1
 
 ## 2. Record URLs
 
-Overwrite `CONFIG.md` in the project root with only the two URLs used (drop all previous content).
+Overwrite `ROLE-CONFIG.md` in the project root with only the two URLs used (drop all previous content).
 
 ## 3. Fetch the pinned topic
 

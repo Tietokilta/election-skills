@@ -18,10 +18,10 @@ Always ask, even if a URL was given before — the user may be switching servers
 Ask with AskUserQuestion. Options:
 
 - `https://vaalit.tietokilta.fi` (default, listed first as recommended).
-- If `CONFIG.md` exists and its URLs use a different origin: "`<origin>` (from CONFIG.md)".
+- If a `*-CONFIG.md` file exists and its URLs use a different origin: "`<origin>` (from <file>)".
 - "A different server" – then ask for the URL in plain text (unless typed via "Other").
 
-Normalize to the origin (`https://host`). If `CONFIG.md` exists and points to a different host, tell the user its URLs belong to the old server and ask whether to delete it.
+Normalize to the origin (`https://host`). If any `*-CONFIG.md` points to a different host, tell the user its URLs belong to the old server and ask whether to delete it.
 
 ## 3. Generate the key
 
