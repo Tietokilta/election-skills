@@ -78,4 +78,4 @@ If the result equals the current raw content, skip the update. Otherwise update 
 
 Record decisions not visible in the topic content: ignored topics (ID + title + reason), roles added outside `roles.txt`, and resolved ambiguities worth remembering. Keep it concise; remove entries that no longer apply.
 
-Finally, report to the user which roles were linked, newly linked, or left unlinked.
+Finally, report to the user which roles were linked, newly linked, or left unlinked. Include a link to the pinned topic (`<forum origin>/t/<slug>/<id>`).

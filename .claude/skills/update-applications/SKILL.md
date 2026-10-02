@@ -62,6 +62,7 @@ Notes:
 - One topic may very rarely apply to several roles; list it under each.
 - Applications may be humorous; include them in the table for comedic value, but avoid repeating a link many times if the application is not serious.
 - Write the name as the applicant writes it (full name if given), without titles or role text.
+- If one topic names several applicants, separate names by `&` in one link.
 - If a topic appears to apply for a role not in `roles.txt`, stop and ask whether to ignore it or add the role to the table.
 
 ## 7. Update the pinned topic
@@ -86,4 +87,4 @@ If the result equals the current raw content, skip the update. Otherwise update 
 
 Record decisions not visible in the topic content: body-based and user-resolved extractions (topic ID + title + role(s) + name), ignored topics (ID + title + reason), and roles added outside `roles.txt`. Keep it concise; remove entries for topics that no longer exist.
 
-Finally, report to the user the applicants added, changed, or removed, and roles still without applicants.
+Finally, report to the user the applicants added, changed, or removed, and roles still without applicants. Include a link to the pinned topic (`<forum origin>/t/<slug>/<id>`).
