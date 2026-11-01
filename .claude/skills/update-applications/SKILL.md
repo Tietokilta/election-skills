@@ -64,6 +64,7 @@ Notes:
 - Write the name as the applicant writes it (full name if given), without titles or role text.
 - If one topic names several applicants, separate names by `&` in one link.
 - If a topic appears to apply for a role not in `roles.txt`, stop and ask whether to ignore it or add the role to the table.
+- The table can contain additional names that do not link to a topic, typically for people continuing in their current multi-year role. Keep them as they are, and add new ones if explicitly requested by the user.
 
 ## 7. Update the pinned topic
 
